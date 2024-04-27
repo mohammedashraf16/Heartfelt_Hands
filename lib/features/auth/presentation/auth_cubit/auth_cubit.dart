@@ -1,0 +1,39 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:heartfelt_hands/features/auth/presentation/auth_cubit/auth_state.dart';
+
+class AuthCubit extends Cubit<AuthState> {
+  AuthCubit() : super(AuthInitial());
+  String? fullName;
+  String? email;
+  String? password;
+  String? confirmPassword;
+  String? phoneNumber;
+  bool? termsAndConditionCheckBox = false;
+  GlobalKey<FormState> signupFormKey = GlobalKey();
+  signUpWithEmailAndPassword() async {
+    try {
+      emit(SignUpLoadingState());
+      final credential =
+          await FirebaseAuth.instance.createUserWithEmailAndPassword(
+        email: email!,
+        password: password!,
+      );
+      emit(SignUpSuccessState());
+    } on FirebaseAuthException catch (e) {
+      if (e.code == 'weak-password') {
+        emit(SignUpFailureState("The password provided is too weak."));
+      } else if (e.code == 'email-already-in-use') {
+        emit(SignUpFailureState("The account already exists for that email."));
+      }
+    } catch (e) {
+      emit(SignUpFailureState(e.toString()));
+    }
+  }
+
+  updateTermsAndConditionCheckBox({required newValue}) {
+    termsAndConditionCheckBox = newValue;
+    emit(TermsAndConditionUpdateState());
+  }
+}
