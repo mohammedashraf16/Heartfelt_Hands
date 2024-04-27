@@ -41,7 +41,9 @@ abstract class AppStrings {
       periodicDonation = "التبرع الدوري",
       logOut = "تسجيل الخروج",
       contribute = " ساهم في بناء جامع",
-  doNotHaveAnyDonation =  "ليس لديك تبرعات حالياً",
+      doNotHaveAnyDonation = "ليس لديك تبرعات حالياً",
+      addNewCard = "اضافة بطاقة جديدة",
+      doNotHavePaymentCard = "ليس لديك بطاقات دفع مسجلة",
       subTitleOne =
           "يسعى المشروع إلى بناء جامع متعدد المرافق والخدمات على طريق السريع؛ ليسهل على المسافرين أداء الصلاة في الأماكن المخصصة لها",
       donateYourMoney = "زكاة مالك",
