@@ -71,6 +71,7 @@ class CustomSignUpForm extends StatelessWidget {
                         color: AppColors.kRedColor,
                       )
                     : CustomButtonSignUpScreen(
+                  text: AppStrings.createAccount,
                         color: authCubit.termsAndConditionCheckBox == false
                             ? AppColors.kGrayColor
                             : null,

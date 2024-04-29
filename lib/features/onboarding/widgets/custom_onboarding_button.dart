@@ -5,7 +5,9 @@ import 'package:heartfelt_hands/utils/app_text_style.dart';
 
 class CustomOnBoardingBtn extends StatelessWidget {
   const CustomOnBoardingBtn({super.key, required this.text});
-final String text ;
+
+  final String text;
+
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -28,13 +30,15 @@ final String text ;
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) =>  const CustomBottomNavBar(),
+                builder: (context) => const CustomBottomNavBar(),
               ),
             );
           },
-          child:  Text(
+          child: Text(
             text,
-            style: CustomTextStyles.inter800Style20,
+            style: CustomTextStyles.inter800Style20.copyWith(
+              color: Colors.white,
+            ),
           ),
         ),
       ),

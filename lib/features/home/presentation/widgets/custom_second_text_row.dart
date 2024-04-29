@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:heartfelt_hands/features/contribution/presentation/views/contribution_view.dart';
+import 'package:heartfelt_hands/features/shop/presentation/views/shop_view.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
 import 'package:heartfelt_hands/utils/app_strings.dart';
 import 'package:heartfelt_hands/utils/app_text_style.dart';
+import 'package:page_transition/page_transition.dart';
 
 class CustomSecondTextRow extends StatelessWidget {
   const CustomSecondTextRow({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       children: [
         Padding(
           padding: const EdgeInsets.only(right: 8.0),
@@ -36,14 +39,26 @@ class CustomSecondTextRow extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             color: AppColors.kGreenColor,
           ),
-          child: Text(
-            textAlign: TextAlign.center,
-            AppStrings.donateNow,
-            style: CustomTextStyles.inter800Style20
-                .copyWith(color: Colors.white),
+          child: GestureDetector(
+            onTap: () {
+              Navigator.push(
+                context,
+                PageTransition(
+                    child: const ContributionView(),
+                    type: PageTransitionType.topToBottom),
+              );
+            },
+            child: Text(
+              textAlign: TextAlign.center,
+              AppStrings.donateNow,
+              style: CustomTextStyles.inter800Style20
+                  .copyWith(color: Colors.white),
+            ),
           ),
         ),
-        const SizedBox(width: 5,),
+        const SizedBox(
+          width: 5,
+        ),
         Padding(
           padding: const EdgeInsets.only(left: 10.0),
           child: Container(
@@ -54,7 +69,14 @@ class CustomSecondTextRow extends StatelessWidget {
               color: AppColors.kGreenColor,
             ),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  PageTransition(
+                      child: const ShopView(),
+                      type: PageTransitionType.topToBottom),
+                );
+              },
               icon: const Icon(
                 Icons.shopping_cart_outlined,
                 color: Colors.white,

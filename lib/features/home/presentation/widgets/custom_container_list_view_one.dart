@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:heartfelt_hands/features/auth/presentation/sign_up/views/sign_up_view.dart';
-import 'package:heartfelt_hands/utils/app_assets.dart';
+import 'package:heartfelt_hands/features/home/data/model/data.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
 import 'package:heartfelt_hands/utils/app_text_style.dart';
-import 'package:heartfelt_hands/utils/app_strings.dart';
 
-class CustomCategoryListViewItem extends StatelessWidget {
-  const CustomCategoryListViewItem({super.key});
-
+class CustomContainerListViewOne extends StatelessWidget {
+  const CustomContainerListViewOne({
+    super.key, required this.index,
+  });
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -16,10 +17,10 @@ class CustomCategoryListViewItem extends StatelessWidget {
       width: 420,
       height: 400,
       decoration: BoxDecoration(
-        image: const DecorationImage(
+        image:   DecorationImage(
           fit: BoxFit.fitWidth,
           image: AssetImage(
-            Assets.imagesDonate1,
+            data[index].image,
           ),
         ),
         borderRadius: BorderRadius.circular(5),
@@ -33,8 +34,8 @@ class CustomCategoryListViewItem extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            padding: const EdgeInsets.symmetric(vertical: 10),
-            width: 350,
+            padding: const EdgeInsets.symmetric(vertical: 10,horizontal:30),
+            width: double.infinity,
             height: 50,
             decoration: BoxDecoration(
               color: AppColors.kMintGreenColor,
@@ -42,11 +43,12 @@ class CustomCategoryListViewItem extends StatelessWidget {
             ),
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Text(
-                  AppStrings.foodSurplus,
+                  data[index].subTitle,
                   textAlign: TextAlign.center,
                   style: CustomTextStyles.inter800Style20.copyWith(
                     color: AppColors.kBlueColor,
@@ -107,7 +109,7 @@ class CustomCategoryListViewItem extends StatelessWidget {
                   ),
                   child: Text(
                     textAlign: TextAlign.center,
-                    AppStrings.donateNow,
+                    data[index].title,
                     style: CustomTextStyles.inter800Style20,
                   ),
                 ),
