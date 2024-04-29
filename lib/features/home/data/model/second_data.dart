@@ -1,21 +1,21 @@
 import 'package:heartfelt_hands/utils/app_assets.dart';
 import 'package:heartfelt_hands/utils/app_strings.dart';
 
-class ListOneData {
+class ListSecondData {
   final String image;
   final String title;
   final String subTitle;
 
-  ListOneData(
+  ListSecondData(
       this.image,
       this.title,
       this.subTitle,
       );
 }
-List<ListOneData> data = [
-  ListOneData(Assets.imageDonate2, AppStrings.donateNow, AppStrings.foodSurplus,),
-  ListOneData(Assets.imageRectangle31, AppStrings.donateNow, AppStrings.oldIsNewToOthers),
-  ListOneData(Assets.imageRectangle32, AppStrings.shareNow, AppStrings.rateYourExpre ),
-  ListOneData(Assets.imageRectangle65,  AppStrings.payYourZakat,  AppStrings.zakatOnMoney),
-  ListOneData(Assets.imageRectangle66,  AppStrings.payYourZakat,  AppStrings.zakatOnMoney),
+List<ListSecondData> secondData = [
+  ListSecondData(Assets.imageDonate2, AppStrings.providingMeals, AppStrings.amount,),
+  ListSecondData(Assets.imageRectangle31, AppStrings.humanitarianCases, AppStrings.amountTwo),
+  ListSecondData(Assets.imageRectangle32, AppStrings.getMarried, AppStrings.amountThree ),
+  ListSecondData(Assets.imageRectangle65,  AppStrings.umrahTrips,  AppStrings.amountFour),
+  ListSecondData(Assets.imageRectangle66,  AppStrings.gazaAid,  AppStrings.amountFive),
 ];

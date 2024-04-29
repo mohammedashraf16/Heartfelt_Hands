@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:heartfelt_hands/features/home/presentation/widgets/custom_second_list_view_item.dart';
+import 'package:heartfelt_hands/features/home/presentation/widgets/custom_containr_second_list_view.dart';
 
 class CustomSecondCategoryListView extends StatelessWidget {
   const CustomSecondCategoryListView({super.key});
@@ -12,7 +12,7 @@ class CustomSecondCategoryListView extends StatelessWidget {
       child: ListView.separated(
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return const CustomSecondListViewItem();
+            return  CustomContainerSecondListView(index: index,);
           },
           separatorBuilder: (context, index) {
             return const SizedBox(
@@ -23,3 +23,4 @@ class CustomSecondCategoryListView extends StatelessWidget {
     );
   }
 }
+

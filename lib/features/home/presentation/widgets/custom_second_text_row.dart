@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heartfelt_hands/features/contribution/presentation/views/contribution_view.dart';
+import 'package:heartfelt_hands/features/home/data/model/second_data.dart';
 import 'package:heartfelt_hands/features/shop/presentation/views/shop_view.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
 import 'package:heartfelt_hands/utils/app_strings.dart';
@@ -7,8 +8,8 @@ import 'package:heartfelt_hands/utils/app_text_style.dart';
 import 'package:page_transition/page_transition.dart';
 
 class CustomSecondTextRow extends StatelessWidget {
-  const CustomSecondTextRow({super.key});
-
+  const CustomSecondTextRow({super.key, required this.index});
+final int index;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -24,7 +25,7 @@ class CustomSecondTextRow extends StatelessWidget {
                 maxLines: 2,
               ),
               Text(
-                AppStrings.amount,
+                secondData[index].subTitle,
                 style: CustomTextStyles.inter800Style20,
                 maxLines: 2,
               ),

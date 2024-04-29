@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:heartfelt_hands/features/home/data/model/second_data.dart';
 import 'package:heartfelt_hands/features/home/presentation/widgets/custom_second_text_row.dart';
 import 'package:heartfelt_hands/utils/app_assets.dart';
-import 'package:heartfelt_hands/utils/app_strings.dart';
 import 'package:heartfelt_hands/utils/app_text_style.dart';
 
-class CustomSecondListViewItem extends StatelessWidget {
-  const CustomSecondListViewItem({super.key});
-
+class CustomContainerSecondListView extends StatelessWidget {
+  const CustomContainerSecondListView({
+    super.key, required this.index,
+  });
+  final int index;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -27,7 +29,7 @@ class CustomSecondListViewItem extends StatelessWidget {
             children: [
               Image.asset(
                 fit: BoxFit.fitWidth,
-                Assets.imagesDonate2,
+                secondData[index].image,
                 width: 400,
                 height: 155,
               ),
@@ -44,7 +46,7 @@ class CustomSecondListViewItem extends StatelessWidget {
             child: Align(
               alignment: Alignment.topRight,
               child: Text(
-                AppStrings.providingMeals,
+                secondData[index].title,
                 style: CustomTextStyles.inter800Style20,
               ),
             ),
@@ -52,7 +54,7 @@ class CustomSecondListViewItem extends StatelessWidget {
           const SizedBox(
             height: 17,
           ),
-          const CustomSecondTextRow()
+          CustomSecondTextRow(index: index,)
         ],
       ),
     );
