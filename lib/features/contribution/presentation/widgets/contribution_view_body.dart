@@ -5,10 +5,12 @@ import 'package:heartfelt_hands/features/auth/presentation/sign_up/widgets/custo
 import 'package:heartfelt_hands/features/contribution/presentation/widgets/custom_app_bar_contribution_view.dart';
 import 'package:heartfelt_hands/features/contribution/presentation/widgets/custom_contact_container.dart';
 import 'package:heartfelt_hands/features/contribution/presentation/widgets/custom_donation_details_container.dart';
+import 'package:heartfelt_hands/features/success/presentation/views/success_donation_view.dart';
 import 'package:heartfelt_hands/utils/app_assets.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
 import 'package:heartfelt_hands/utils/app_strings.dart';
 import 'package:heartfelt_hands/utils/app_text_style.dart';
+import 'package:page_transition/page_transition.dart';
 
 class ContributionViewBody extends StatelessWidget {
   const ContributionViewBody({super.key});
@@ -80,7 +82,14 @@ class CustomContainerPaymentMethod extends StatelessWidget {
                 ),
               ),
               CustomButtonSignUpScreen(
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    PageTransition(
+                        child: SuccessDonationView(),
+                        type: PageTransitionType.topToBottom),
+                  );
+                },
                 color: const Color(0xffFF9A44),
                 text: AppStrings.confirm,
               )

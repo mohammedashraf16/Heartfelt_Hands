@@ -25,6 +25,11 @@ abstract class CustomTextStyles {
     fontSize: 24,
     fontWeight: FontWeight.w200,
     fontFamily: "Inter",
+  );  static final interStyle30 = TextStyle(
+    color: Colors.black,
+    fontSize: 30,
+    fontWeight: FontWeight.bold,
+    fontFamily: "Inter",
   );
   static final interStyle45 =  TextStyle(
     color: Colors.black,

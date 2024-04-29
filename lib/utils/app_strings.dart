@@ -21,7 +21,7 @@ abstract class AppStrings {
       amount = "10,000 ج.م",
       amountTwo = "150,000 ج.م",
       amountThree = "100,000 ج.م",
-       amountFour= "1000,000 ج.م",
+      amountFour = "1000,000 ج.م",
       amountFive = "11000,000 ج.م",
       gratePhilanthropists = "كبار المحسنين",
       partners = "شركاء الإحسان ",
@@ -62,6 +62,8 @@ abstract class AppStrings {
       rateYourExpre = "قيم تجربتك,لتجربة تبرع أفضل",
       payYourZakat = "أخرج زكاتك الان",
       zakatOnMoney = "زكاة مالك ..أجر وبركة",
+      yourGoodnessHasArrived = "شكرا...خيرك واصل في \nرمضان ",
+      bePartOfOurFamily = "يشرفنا أن تكون جزءًا من عائلة المتبرعين لدينا.",
       confirm = "تأكيد",
       numberOfMeals = "هدفنا توفير 1500 وجبة خلال الشهر الكريم .",
       donationDetailsOne =
