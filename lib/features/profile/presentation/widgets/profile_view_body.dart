@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:heartfelt_hands/features/donation_record/presentation/views/donation_record_view.dart';
 import 'package:heartfelt_hands/features/payment_card/presentation/views/payment_card_view.dart';
+import 'package:heartfelt_hands/features/periodic_donation/presentation/views/periodic_donation_view.dart';
 import 'package:heartfelt_hands/features/profile/presentation/widgets/custom_card_profile_view.dart';
 import 'package:heartfelt_hands/features/profile/presentation/widgets/custom_profile_name_text_widget.dart';
 import 'package:heartfelt_hands/features/profile/presentation/widgets/custom_row_exit_icon.dart';
@@ -75,7 +76,11 @@ class ProfileViewBody extends StatelessWidget {
           title: AppStrings.periodicDonation,
           iconButton: IconButton(
               onPressed: () {
-
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const PeriodicDonationView(),
+                    ));
               }, icon: Image.asset(Assets.imageCareLeft)),
         )),
         const SliverToBoxAdapter(child: SizedBox(height: 46)),
