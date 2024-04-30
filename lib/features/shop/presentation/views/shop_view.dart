@@ -7,9 +7,11 @@ class ShopView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.kBackgroundColor,
-      body: const ShopViewBody(),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.kLightGreenColor,
+        body: const ShopViewBody(),
+      ),
     );
   }
 }
