@@ -51,6 +51,7 @@ class Assets {
   static const String imageRectangle65 = "assets/images/Rectangle65.png";
   static const String imageRectangle66 = "assets/images/Rectangle66.png";
   static const String imageVector3 = "assets/images/Vector 3.png";
+  static const String imageGear = "assets/images/Gear.png";
   static const String image8 = "assets/images/image 8.png";
   static const String imageFolderSimpleStar =
       "assets/images/FolderSimpleStar.png";
