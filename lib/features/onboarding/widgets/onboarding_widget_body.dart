@@ -69,7 +69,7 @@ class _OnBoardingWidgetBodyState extends State<OnBoardingWidgetBody> {
               CustomButton(
                 onTap: () {
                   widget.controller.nextPage(
-                    duration: const Duration(milliseconds: 200),
+                    duration: const Duration(milliseconds: 400),
                     curve: Curves.easeInCirc,
                   );
                 },

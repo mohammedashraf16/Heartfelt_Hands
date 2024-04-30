@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:heartfelt_hands/features/home/presentation/views/home_view.dart';
+import 'package:heartfelt_hands/features/auth/presentation/sign_up/views/sign_up_view.dart';
 import 'package:heartfelt_hands/features/onboarding/widgets/onboarding_widget_body.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
 import 'package:heartfelt_hands/constants/custom_elevated_button.dart';
+import 'package:page_transition/page_transition.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -24,10 +26,13 @@ class _HomePageState extends State<HomePage> {
             children: [
               CustomBtn(
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => const HomeView(),
+                    PageTransition(
+                      child: const SignUpView(),
+                      type: PageTransitionType.topToBottom,
+                      curve: Easing.legacy,
+                      duration: const Duration(seconds: 1),
                     ),
                   );
                 },

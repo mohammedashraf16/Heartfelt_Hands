@@ -3,5 +3,5 @@ import 'package:heartfelt_hands/features/auth/presentation/auth_cubit/auth_cubit
 
 final getIt = GetIt.instance;
 void setupServiceLocator(){
-  getIt.registerSingleton <AuthCubit>(AuthCubit());
+  getIt.registerSingleton<AuthCubit>(AuthCubit());
 }

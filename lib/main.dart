@@ -1,14 +1,17 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:heartfelt_hands/core/databases/cache/cache_helper.dart';
 import 'package:heartfelt_hands/core/functions/check_state_changes.dart';
+import 'package:heartfelt_hands/core/services/service_locator.dart';
 import 'package:heartfelt_hands/features/onboarding/presentation/views/onboarding_screen.dart';
-import 'package:heartfelt_hands/features/services/service_locator.dart';
 import 'package:heartfelt_hands/firebase_options.dart';
 import 'package:heartfelt_hands/generated/l10n.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  CacheHelper().init();
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
@@ -17,7 +20,6 @@ Future<void> main() async {
   checkStateChanges();
   runApp(const MyApp());
 }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -59,3 +61,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

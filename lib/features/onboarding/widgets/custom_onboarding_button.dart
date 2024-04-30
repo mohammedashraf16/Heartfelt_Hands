@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:heartfelt_hands/features/home/presentation/widgets/custom_bottom_nav_bar.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
 import 'package:heartfelt_hands/utils/app_text_style.dart';
+import 'package:page_transition/page_transition.dart';
 
 class CustomOnBoardingBtn extends StatelessWidget {
   const CustomOnBoardingBtn({super.key, required this.text});
@@ -29,8 +30,11 @@ class CustomOnBoardingBtn extends StatelessWidget {
           onPressed: () {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(
-                builder: (context) => const CustomBottomNavBar(),
+              PageTransition(
+                child: const CustomBottomNavBar(),
+                type: PageTransitionType.topToBottom,
+                curve: Easing.legacy,
+                duration: const Duration(seconds: 1),
               ),
             );
           },

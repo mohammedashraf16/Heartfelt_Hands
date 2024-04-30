@@ -8,16 +8,19 @@ class CustomCategories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Row(
+    return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         CustomCategoryItem(
+          onTap: () {
+
+          },
             image: Assets.imageCategory3,
             title: AppStrings.ambassadors),
-        CustomCategoryItem(
+        const CustomCategoryItem(
             image: Assets.imageCategory2,
             title: AppStrings.partners),
-        CustomCategoryItem(
+        const CustomCategoryItem(
             image: Assets.imageCategory1,
             title: AppStrings.gratePhilanthropists),
       ],
