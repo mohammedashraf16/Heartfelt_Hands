@@ -19,10 +19,10 @@ class ShopViewBody extends StatelessWidget {
           title: AppStrings.shop,
         )),
         SliverToBoxAdapter(child: CustomContainerShopView()),
+
       ],
     );
   }
 }
-
 
 

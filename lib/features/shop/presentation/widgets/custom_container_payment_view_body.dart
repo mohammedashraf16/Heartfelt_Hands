@@ -2,38 +2,56 @@ import 'package:flutter/material.dart';
 import 'package:heartfelt_hands/features/auth/presentation/sign_up/widgets/custom_sign_up_screen.dart';
 import 'package:heartfelt_hands/features/auth/presentation/sign_up/widgets/custom_text_form_field.dart';
 import 'package:heartfelt_hands/features/contribution/presentation/widgets/custom_row_card_widget.dart';
-import 'package:heartfelt_hands/features/success/presentation/views/success_donation_view.dart';
+import 'package:heartfelt_hands/features/success/presentation/views/success_payment_view.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
 import 'package:heartfelt_hands/utils/app_strings.dart';
 import 'package:heartfelt_hands/utils/app_text_style.dart';
 import 'package:page_transition/page_transition.dart';
 
-class CustomContainerPaymentMethod extends StatelessWidget {
-  const CustomContainerPaymentMethod({super.key});
+class CustomContainerPaymentViewBody extends StatelessWidget {
+  const CustomContainerPaymentViewBody({
+    super.key,
+    required this.title,
+    required this.subTitle,
+  });
+
+  final String title;
+  final String subTitle;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(10.0),
+      padding: const EdgeInsets.all(15.0),
       child: Container(
+        height: 1020,
         width: double.infinity,
-        height: 750,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(12),
-          color: AppColors.kBackgroundColor,
+            borderRadius: BorderRadius.circular(12),
+            color: AppColors.kColor
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 10.0, right: 10),
+          padding: const EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                AppStrings.paymentMethod,
-                style: CustomTextStyles.interBoldStyle24,
+                textAlign: TextAlign.start,
+                title,
+                style: CustomTextStyles.interStyle24.copyWith(color: Colors.black),
               ),
-              const CustomRowCard(),
-              const SizedBox(
-                height: 10,
+              const SizedBox(height: 30),
+              Text(
+                subTitle,
+                style: CustomTextStyles.inter100Style16,
+              ),
+              const SizedBox(height: 30),
+              Text(
+                AppStrings.paymentMethod,
+                style: CustomTextStyles.interStyle30,
+              ),
+              const Padding(
+                padding:  EdgeInsets.symmetric(vertical: 25.0),
+                child: CustomRowCard(),
               ),
               CustomTextFormFieldWidget(
                 label: AppStrings.cardNumber,
@@ -71,13 +89,12 @@ class CustomContainerPaymentMethod extends StatelessWidget {
                   icon: const Icon(Icons.code),
                 ),
               ),
-
               CustomButtonSignUpScreen(
                 onTap: () {
                   Navigator.pushReplacement(
                     context,
                     PageTransition(
-                        child: const SuccessDonationView(),
+                        child: const CustomSuccessPaymentView(),
                         type: PageTransitionType.topToBottom),
                   ).then((value) => (value) {
                     Navigator.canPop(context);
