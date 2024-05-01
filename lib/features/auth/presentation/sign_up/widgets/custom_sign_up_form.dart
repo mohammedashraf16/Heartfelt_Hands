@@ -35,31 +35,58 @@ class CustomSignUpForm extends StatelessWidget {
             child: Column(
               children: [
                 CustomTextFormFieldWidget(
-                  icon: IconButton(onPressed: (){}, icon: const Icon(Icons.person)),
+                    icon: IconButton(
+                        onPressed: () {}, icon: const Icon(Icons.person)),
                     label: AppStrings.fullName,
                     onChanged: (fullName) {
                       authCubit.fullName = fullName;
                     }),
                 CustomTextFormFieldWidget(
-                    icon: IconButton(onPressed: (){}, icon: const Icon(Icons.email)),
+                    icon: IconButton(
+                        onPressed: () {}, icon: const Icon(Icons.email)),
                     label: AppStrings.email,
                     onChanged: (email) {
                       authCubit.email = email;
                     }),
                 CustomTextFormFieldWidget(
-                    icon: IconButton(onPressed: (){}, icon: const Icon(Icons.remove_red_eye)),
-                    label: AppStrings.password,
-                    onChanged: (password) {
-                      authCubit.password = password;
-                    }),
+                  icon: null,
+                  label: AppStrings.password,
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      authCubit.obscurePasswordTextValue == true
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined,
+                    ),
+                    onPressed: () {
+                      authCubit.obscurePasswordText();
+                    },
+                  ),
+                  obscureText: authCubit.obscurePasswordTextValue,
+                  onChanged: (password) {
+                    authCubit.password = password;
+                  },
+                ),
                 CustomTextFormFieldWidget(
-                    icon:IconButton(onPressed: (){}, icon: const Icon(Icons.remove_red_eye)) ,
+                  icon: null,
                     label: AppStrings.confirmPassword,
-                    onChanged: (confirmPassword) {
-                      authCubit.confirmPassword = confirmPassword;
-                    }),
+                  suffixIcon: IconButton(
+                    icon: Icon(
+                      authCubit.obscurePasswordTextValue == true
+                          ? Icons.visibility_outlined
+                          : Icons.visibility_off_outlined,
+                    ),
+                    onPressed: () {
+                      authCubit.obscurePasswordText();
+                    },
+                  ),
+                  obscureText: authCubit.obscurePasswordTextValue,
+                  onChanged: (password) {
+                    authCubit.password = password;
+                  },
+                ),
                 CustomTextFormFieldWidget(
-                    icon: IconButton(onPressed: (){}, icon: const Icon(Icons.phone)),
+                    icon: IconButton(
+                        onPressed: () {}, icon: const Icon(Icons.phone)),
                     label: AppStrings.phoneNumber,
                     onChanged: (phoneNumber) {
                       authCubit.phoneNumber = phoneNumber;
@@ -71,7 +98,7 @@ class CustomSignUpForm extends StatelessWidget {
                         color: AppColors.kRedColor,
                       )
                     : CustomButtonSignUpScreen(
-                  text: AppStrings.createAccount,
+                        text: AppStrings.createAccount,
                         color: authCubit.termsAndConditionCheckBox == false
                             ? AppColors.kGrayColor
                             : null,

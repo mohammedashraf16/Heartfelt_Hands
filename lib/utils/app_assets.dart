@@ -55,6 +55,8 @@ class Assets {
   static const String shape = "assets/images/shape.png";
   static const String image12 = "assets/images/image12.png";
   static const String image8 = "assets/images/image 8.png";
+  static const String image13 = "assets/images/image 13.png";
+  static const String image5 = "assets/images/image 5.png";
   static const String imageFolderSimpleStar =
       "assets/images/FolderSimpleStar.png";
 }
