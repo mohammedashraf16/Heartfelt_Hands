@@ -1,10 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:heartfelt_hands/features/profile/presentation/views/profile_view.dart';
 import 'package:heartfelt_hands/utils/app_assets.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
 import 'package:heartfelt_hands/features/auth/presentation/sign_up/views/sign_up_view.dart';
-
-import '../../../profile/presentation/views/profile_view.dart';
 
 class CustomAppBar extends StatelessWidget {
   const CustomAppBar({super.key});

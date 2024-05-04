@@ -43,5 +43,6 @@ class AuthCubit extends Cubit<AuthState> {
     } else {
       obscurePasswordTextValue = true;
     }
-   }
+    emit(ObscurePasswordTextUpdateState());
+  }
 }

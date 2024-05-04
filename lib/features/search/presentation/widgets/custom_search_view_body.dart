@@ -6,6 +6,9 @@ class SearchViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  CustomTextFormFieldWidget(label: "Search",icon:IconButton(onPressed: (){}, icon: const Icon(Icons.search)),);
+    return CustomTextFormFieldWidget(
+      label: "Search",
+      icon: IconButton(onPressed: () {}, icon: const Icon(Icons.search)),
+    );
   }
 }

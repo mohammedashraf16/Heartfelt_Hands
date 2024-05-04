@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:heartfelt_hands/features/shop/presentation/widgets/custom_app_bar_shop.dart';
+import 'package:heartfelt_hands/features/shop/presentation/widgets/custom_container_payment_view_body.dart';
 import 'package:heartfelt_hands/utils/app_assets.dart';
 import 'package:heartfelt_hands/utils/app_strings.dart';
 
@@ -16,7 +17,11 @@ class SecondPaymentViewBody extends StatelessWidget {
             title: AppStrings.payment,
           ),
         ),
-
+        SliverToBoxAdapter(
+          child: CustomContainerPaymentViewBody(
+              title: AppStrings.donationTwo,
+              subTitle: AppStrings.paymentDonationDetailsTwo),
+        )
       ],
     );
   }

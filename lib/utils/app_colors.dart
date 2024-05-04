@@ -3,7 +3,6 @@ import 'dart:ui';
 abstract class AppColors {
   static Color kBackgroundColor = const Color(0xffE2DED7);
   static Color kGreenColor = const Color(0xff068D6E);
-  static Color kDarkGreenColor = const Color(0xff165B4C);
   static Color kDeepGreenColor = const Color(0xff40766F);
   static Color kBrownColor = const Color(0xff64635E);
   static Color kDeepBrownColor = const Color(0xff564444);
