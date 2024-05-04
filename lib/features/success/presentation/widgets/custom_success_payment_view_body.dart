@@ -13,8 +13,8 @@ class CustomSuccessPaymentViewBody extends StatelessWidget {
         SliverToBoxAdapter(child:CustomContainerSuccessPayment()),
         SliverToBoxAdapter(
           child: CustomTextSuccess(
-            textOne: AppStrings.thanksForYourDonation,
-            textTwo: AppStrings.bePartOfOurFamily,
+            // textOne: AppStrings.thanksForYourDonation,
+            // textTwo: AppStrings.bePartOfOurFamily,
           ),
         ),
       ],
