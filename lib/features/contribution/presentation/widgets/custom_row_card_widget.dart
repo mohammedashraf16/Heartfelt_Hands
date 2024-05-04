@@ -17,36 +17,17 @@ class _CustomRowCardState extends State<CustomRowCard> {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return const Row(
       children: [
-         Row(
-          children: [
-            CustomCheckBoxContributionView(),
-            CustomCircleAvatarContributionView(
-              image: Assets.imageEllipse27,
-            ),
-            Spacer(),
-            CustomCheckBoxContributionView(),
-            CustomCircleAvatarContributionView(
-              image: Assets.imageEllipse28,
-            ),
-
-          ],
+        CustomCheckBoxContributionView(),
+        CustomCircleAvatarContributionView(
+          image: Assets.imageEllipse27,
         ),
-        SizedBox(height: 50),
-        Row(
-          children: [
-            CustomCheckBoxContributionView(),
-            CustomCircleAvatarContributionView(
-              image: Assets.imageEllipse30,
-            ),
-            Spacer(),
-            CustomCheckBoxContributionView(),
-            CustomCircleAvatarContributionView(
-              image: Assets.imageEllipse29,
-            ),
-          ],
-        )
+        Spacer(),
+        CustomCheckBoxContributionView(),
+        CustomCircleAvatarContributionView(
+          image: Assets.imageEllipse28,
+        ),
       ],
     );
   }

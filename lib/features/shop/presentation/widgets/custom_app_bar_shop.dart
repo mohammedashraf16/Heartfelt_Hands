@@ -20,16 +20,14 @@ class CustomAppBarShopView extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(width: 140),
+            const SizedBox(width: 130),
             Text(
               title,
               style: CustomTextStyles.interStyle50,
             ),
             const Spacer(),
             IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
+              onPressed: () {},
               icon: const Image(
                 height: 42,
                 width: 52,

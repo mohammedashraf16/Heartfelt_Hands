@@ -17,7 +17,7 @@ class CustomContainerPaymentMethod extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Container(
         width: double.infinity,
-        height: 750,
+        height: 600,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: AppColors.kBackgroundColor,
@@ -33,36 +33,15 @@ class CustomContainerPaymentMethod extends StatelessWidget {
               ),
               const CustomRowCard(),
               const SizedBox(
-                height: 10,
+                height: 50,
               ),
+              const CustomRowCard(),
               CustomTextFormFieldWidget(
                 label: AppStrings.cardNumber,
                 icon: IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.credit_card),
                 ),
-              ),
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomTextFormFieldWidget(
-                      label: AppStrings.cvc,
-                      icon: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.calendar_view_day_rounded),
-                      ),
-                    ),
-                  ),
-                  Expanded(
-                    child: CustomTextFormFieldWidget(
-                      label: AppStrings.birthDay,
-                      icon: IconButton(
-                        onPressed: () {},
-                        icon: const Icon(Icons.date_range),
-                      ),
-                    ),
-                  ),
-                ],
               ),
               CustomTextFormFieldWidget(
                 label: AppStrings.postalCode,
@@ -71,7 +50,6 @@ class CustomContainerPaymentMethod extends StatelessWidget {
                   icon: const Icon(Icons.code),
                 ),
               ),
-
               CustomButtonSignUpScreen(
                 onTap: () {
                   Navigator.pushReplacement(
@@ -85,7 +63,7 @@ class CustomContainerPaymentMethod extends StatelessWidget {
                 },
                 color: const Color(0xffFF9A44),
                 text: AppStrings.confirm,
-              ),
+              )
             ],
           ),
         ),

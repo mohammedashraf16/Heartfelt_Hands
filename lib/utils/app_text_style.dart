@@ -14,16 +14,16 @@ abstract class CustomTextStyles {
     fontWeight: FontWeight.w100,
     fontFamily: "Inter",
   );
-  static final inter100Style16 = TextStyle(
-    color: AppColors.kDarkGreenColor,
-    fontSize: 20,
-    fontWeight: FontWeight.w100,
-    fontFamily: "Inter",
-  );
   static final inter300Style20 = TextStyle(
     color: Colors.black,
     fontSize: 20,
     fontWeight: FontWeight.w300,
+    fontFamily: "Inter",
+  );
+  static final inter100Style16 = TextStyle(
+    color: Colors.black,
+    fontSize: 16,
+    fontWeight: FontWeight.w100,
     fontFamily: "Inter",
   );
   static final interStyle24 = TextStyle(

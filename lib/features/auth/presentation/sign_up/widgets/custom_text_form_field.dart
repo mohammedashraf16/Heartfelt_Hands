@@ -4,13 +4,12 @@ import 'package:heartfelt_hands/utils/app_text_style.dart';
 
 class CustomTextFormFieldWidget extends StatelessWidget {
   const CustomTextFormFieldWidget(
-      {super.key, required this.label, this.onChanged, this.onFieldSubmitted, required this.icon, this.obscureText, this.suffixIcon});
+      {super.key, required this.label, this.onChanged, this.onFieldSubmitted, required this.icon});
   final void Function(String)? onChanged;
   final void Function(String)? onFieldSubmitted;
-  final Widget? icon;
+  final IconButton icon;
   final String label;
-  final bool? obscureText;
-  final Widget? suffixIcon;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -21,7 +20,6 @@ class CustomTextFormFieldWidget extends StatelessWidget {
         child: TextFormField(
           onChanged: onChanged,
           onFieldSubmitted: onFieldSubmitted,
-          obscureText: obscureText ?? false,
           validator: (value) {
             if (value?.isEmpty ?? true) {
               return "Field is required";
@@ -31,7 +29,6 @@ class CustomTextFormFieldWidget extends StatelessWidget {
           },
           cursorColor: Colors.black,
           decoration: InputDecoration(
-            suffixIcon: suffixIcon,
             prefixIcon: icon,
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
