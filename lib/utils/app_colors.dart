@@ -13,6 +13,7 @@ abstract class AppColors {
   static Color kColor = const Color(0xffEDF6F4);
   static Color kLightGreenColor = const Color(0xffC1DFC4);
   static Color kDeepGrayColor = const Color(0xff505051);
+  static Color kLightGrayColor = const Color(0xffE2E1DF);
   static Color kBlueColor = const Color(0xff3877E2);
   static Color kDeepBlueColor = const Color(0xff5E9EDE);
   static Color kBabyBlueColor = const Color(0xffF0FFFC);

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:heartfelt_hands/features/auth/presentation/auth_cubit/auth_cubit.dart';
 
 class CustomCheckBox extends StatefulWidget {
-  const CustomCheckBox({super.key});
+  const  CustomCheckBox({super.key});
 
   @override
   State<CustomCheckBox> createState() => _CustomCheckBoxState();

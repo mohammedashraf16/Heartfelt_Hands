@@ -27,25 +27,26 @@ class CustomContainerPaymentMethod extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              const SizedBox(height: 10),
               Text(
                 AppStrings.paymentMethod,
                 style: CustomTextStyles.interBoldStyle24,
               ),
+              const SizedBox(height: 10),
               const CustomRowCard(),
               const SizedBox(
                 height: 50,
               ),
-              const CustomRowCard(),
               CustomTextFormFieldWidget(
                 label: AppStrings.cardNumber,
-                icon: IconButton(
+                iconButton: IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.credit_card),
                 ),
               ),
               CustomTextFormFieldWidget(
                 label: AppStrings.postalCode,
-                icon: IconButton(
+                iconButton: IconButton(
                   onPressed: () {},
                   icon: const Icon(Icons.code),
                 ),
@@ -58,7 +59,7 @@ class CustomContainerPaymentMethod extends StatelessWidget {
                         child: const SuccessDonationView(),
                         type: PageTransitionType.topToBottom),
                   ).then((value) => (value) {
-                    Navigator.canPop(context);
+                    Navigator.pop(context);
                   });
                 },
                 color: const Color(0xffFF9A44),

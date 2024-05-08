@@ -1,23 +1,34 @@
 import 'package:flutter/material.dart';
-import 'package:heartfelt_hands/utils/app_colors.dart';
 import 'package:heartfelt_hands/utils/app_text_style.dart';
 
 class CustomTextFormFieldWidget extends StatelessWidget {
-  const CustomTextFormFieldWidget(
-      {super.key, required this.label, this.onChanged, this.onFieldSubmitted, required this.icon});
+  const CustomTextFormFieldWidget({
+    super.key,
+    required this.label,
+    this.onChanged,
+    this.onFieldSubmitted,
+    required this.iconButton,
+    this.maxLines = 1,
+    this.suffixIcon,
+    this.color,
+  });
+
   final void Function(String)? onChanged;
   final void Function(String)? onFieldSubmitted;
-  final IconButton icon;
+  final IconButton? iconButton;
+  final IconButton? suffixIcon;
   final String label;
+  final int maxLines;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 10.0, left: 20, top: 39),
+      padding: const EdgeInsets.only(right: 20, left: 20, top: 20),
       child: SizedBox(
         width: double.infinity,
-        height: 70,
         child: TextFormField(
+          maxLines: maxLines,
           onChanged: onChanged,
           onFieldSubmitted: onFieldSubmitted,
           validator: (value) {
@@ -29,7 +40,8 @@ class CustomTextFormFieldWidget extends StatelessWidget {
           },
           cursorColor: Colors.black,
           decoration: InputDecoration(
-            prefixIcon: icon,
+            prefixIcon: iconButton,
+            suffixIcon: suffixIcon,
             focusedBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(10),
                 borderSide: const BorderSide(width: 4, color: Colors.grey)),
@@ -38,8 +50,12 @@ class CustomTextFormFieldWidget extends StatelessWidget {
                 borderSide: BorderSide.none),
             border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
             filled: true,
-            fillColor: AppColors.kGrayColor,
-            label: Text(label),
+            hintMaxLines: maxLines,
+            fillColor: color,
+            label: Text(
+              label,
+              textAlign: TextAlign.start,
+            ),
             labelStyle: CustomTextStyles.interStyle24,
           ),
         ),

@@ -27,7 +27,9 @@ class CustomAppBarShopView extends StatelessWidget {
             ),
             const Spacer(),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pop(context);
+              },
               icon: const Image(
                 height: 42,
                 width: 52,

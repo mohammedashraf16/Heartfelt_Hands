@@ -1,9 +1,15 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:heartfelt_hands/features/auth/presentation/sign_up/views/sign_up_view.dart';
+import 'package:heartfelt_hands/features/contribution/presentation/views/contribution_view.dart';
+import 'package:heartfelt_hands/features/donationNow/presentation/views/donation_now_view.dart';
+import 'package:heartfelt_hands/features/donations/presentation/donation_view.dart';
 import 'package:heartfelt_hands/features/home/data/model/data.dart';
+import 'package:heartfelt_hands/features/home/presentation/widgets/custom_bottom_nav_bar.dart';
+import 'package:heartfelt_hands/features/periodic_donation/presentation/views/periodic_donation_view.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
+import 'package:heartfelt_hands/utils/app_strings.dart';
 import 'package:heartfelt_hands/utils/app_text_style.dart';
-
 class CustomAlertDialog extends StatelessWidget {
   const CustomAlertDialog({super.key, required this.index});
   final int index;
@@ -22,7 +28,12 @@ class CustomAlertDialog extends StatelessWidget {
 
                 TextButton(
                   onPressed: () {
-                    customSignupNavigate(context);
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => FirebaseAuth.instance.currentUser==null?const SignUpView():const DonationNowView(),
+                      ),
+                    );
                   },
 
                   style: ButtonStyle(
@@ -30,15 +41,23 @@ class CustomAlertDialog extends StatelessWidget {
                       AppColors.kGreenColor,
                     ),
                   ),
-                  child: Text(
-                    "انشاء حساب",
+                  child: FirebaseAuth.instance.currentUser==null?Text(
+                    AppStrings.createAccount,
                     style: CustomTextStyles.inter800Style20.copyWith(color: Colors.white),
-                  ),
+                  ):Text(
+                    AppStrings.donateNow,
+                    style: CustomTextStyles.inter800Style20.copyWith(color: Colors.white),
+                  )
 
                 ),
               ],
-              title: Text(
+              title: FirebaseAuth.instance.currentUser==null?Text(
                 " قم بانشاء حساب",
+                style: CustomTextStyles.inter800Style20
+                    .copyWith(fontSize: 30, color: Colors.black),
+              ):
+              Text(
+                "يمكنك التبرع الان",
                 style: CustomTextStyles.inter800Style20
                     .copyWith(fontSize: 30, color: Colors.black),
               ),
@@ -65,15 +84,6 @@ class CustomAlertDialog extends StatelessWidget {
           data[index].title,
           style: CustomTextStyles.inter800Style20,
         ),
-      ),
-    );
-  }
-
-  customSignupNavigate(BuildContext context) {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => const SignUpView(),
       ),
     );
   }

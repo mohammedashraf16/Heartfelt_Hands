@@ -35,31 +35,31 @@ class CustomSignUpForm extends StatelessWidget {
             child: Column(
               children: [
                 CustomTextFormFieldWidget(
-                  icon: IconButton(onPressed: (){}, icon: const Icon(Icons.person)),
+                  iconButton: IconButton(onPressed: (){}, icon: const Icon(Icons.person)),
                     label: AppStrings.fullName,
                     onChanged: (fullName) {
                       authCubit.fullName = fullName;
                     }),
                 CustomTextFormFieldWidget(
-                    icon: IconButton(onPressed: (){}, icon: const Icon(Icons.email)),
+                    iconButton: IconButton(onPressed: (){}, icon: const Icon(Icons.email)),
                     label: AppStrings.email,
                     onChanged: (email) {
                       authCubit.email = email;
                     }),
                 CustomTextFormFieldWidget(
-                    icon: IconButton(onPressed: (){}, icon: const Icon(Icons.remove_red_eye)),
+                    iconButton: IconButton(onPressed: (){}, icon: const Icon(Icons.remove_red_eye)),
                     label: AppStrings.password,
                     onChanged: (password) {
                       authCubit.password = password;
                     }),
                 CustomTextFormFieldWidget(
-                    icon:IconButton(onPressed: (){}, icon: const Icon(Icons.remove_red_eye)) ,
+                    iconButton:IconButton(onPressed: (){}, icon: const Icon(Icons.remove_red_eye)) ,
                     label: AppStrings.confirmPassword,
                     onChanged: (confirmPassword) {
                       authCubit.confirmPassword = confirmPassword;
                     }),
                 CustomTextFormFieldWidget(
-                    icon: IconButton(onPressed: (){}, icon: const Icon(Icons.phone)),
+                    iconButton: IconButton(onPressed: (){}, icon: const Icon(Icons.phone)),
                     label: AppStrings.phoneNumber,
                     onChanged: (phoneNumber) {
                       authCubit.phoneNumber = phoneNumber;

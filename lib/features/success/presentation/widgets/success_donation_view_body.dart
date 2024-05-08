@@ -11,7 +11,7 @@ class SuccessDonationViewBody extends StatelessWidget {
       slivers: [
         SliverToBoxAdapter(child: CustomContainerSuccessDonation()),
         SliverToBoxAdapter(child: SizedBox(height: 30,)),
-        SliverToBoxAdapter(child: CustomTextSuccess()),
+        SliverToBoxAdapter(child: CustomTextSuccess(textOne: '', textTwo: "",)),
 
       ],
     );
