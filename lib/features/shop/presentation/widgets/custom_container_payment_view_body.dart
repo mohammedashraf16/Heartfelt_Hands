@@ -3,7 +3,6 @@ import 'package:heartfelt_hands/features/auth/presentation/sign_up/widgets/custo
 import 'package:heartfelt_hands/features/auth/presentation/sign_up/widgets/custom_text_form_field.dart';
 import 'package:heartfelt_hands/features/contribution/presentation/widgets/custom_row_card_widget.dart';
 import 'package:heartfelt_hands/features/shop/presentation/views/payment_success_view.dart';
-import 'package:heartfelt_hands/features/success/presentation/widgets/custom_success_payment_view_body.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
 import 'package:heartfelt_hands/utils/app_strings.dart';
 import 'package:heartfelt_hands/utils/app_text_style.dart';

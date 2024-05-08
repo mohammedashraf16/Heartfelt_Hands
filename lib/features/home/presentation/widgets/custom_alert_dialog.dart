@@ -1,12 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:heartfelt_hands/features/auth/presentation/sign_up/views/sign_up_view.dart';
-import 'package:heartfelt_hands/features/contribution/presentation/views/contribution_view.dart';
 import 'package:heartfelt_hands/features/donationNow/presentation/views/donation_now_view.dart';
-import 'package:heartfelt_hands/features/donations/presentation/donation_view.dart';
 import 'package:heartfelt_hands/features/home/data/model/data.dart';
-import 'package:heartfelt_hands/features/home/presentation/widgets/custom_bottom_nav_bar.dart';
-import 'package:heartfelt_hands/features/periodic_donation/presentation/views/periodic_donation_view.dart';
 import 'package:heartfelt_hands/utils/app_colors.dart';
 import 'package:heartfelt_hands/utils/app_strings.dart';
 import 'package:heartfelt_hands/utils/app_text_style.dart';
