@@ -33,7 +33,12 @@ class CustomContainerPaymentMethod extends StatelessWidget {
                 style: CustomTextStyles.interBoldStyle24,
               ),
               const SizedBox(height: 10),
+
+
+              // Custom Circle Avatar
               const CustomRowCard(),
+
+
               const SizedBox(
                 height: 50,
               ),

@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:heartfelt_hands/features/auth/presentation/counter_cubit/counter_cubit.dart';
 import 'package:heartfelt_hands/features/auth/presentation/sign_up/widgets/custom_sign_up_screen.dart';
 import 'package:heartfelt_hands/features/auth/presentation/sign_up/widgets/custom_text_form_field.dart';
 import 'package:heartfelt_hands/features/donationNow/presentation/widgets/custom_cntainer_location.dart';
@@ -56,7 +58,9 @@ class OrderReceiptDetailsViewBody extends StatelessWidget {
            const SliverToBoxAdapter(child: CustomTextFormFieldWidget(iconButton: null,label: AppStrings.phoneNumber)),
            const SliverToBoxAdapter(child: CustomTextFormFieldWidget(iconButton: null,label: AppStrings.descriptionOfAddress,maxLines: 5)),
            SliverToBoxAdapter(child: CustomButtonSignUpScreen(onTap: (){
-             Navigator.push(context, PageTransition(child: const SuccessDonationView(), type: PageTransitionType.fade,duration: const Duration(seconds: 1)),);
+             Navigator.push(context, PageTransition(child: const SuccessDonationView(), type: PageTransitionType.fade,duration: const Duration(seconds: 1)),).then((value) => (value) {
+               BlocProvider.of<CounterCubit>(context).increment();
+             });
            },text: AppStrings.confirmOrder,color: null,),)
         ],
       ),

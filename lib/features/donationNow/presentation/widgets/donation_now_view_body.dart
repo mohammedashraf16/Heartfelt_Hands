@@ -33,7 +33,7 @@ class DonationNowViewBody extends StatelessWidget {
         SliverToBoxAdapter(
           child: CustomTextFormFieldWidget(
             color: const Color(0xffE7E7E7),
-            label: AppStrings.start,
+            label: AppStrings.upLoadPhoto,
             iconButton: null,
             suffixIcon: IconButton(
               onPressed: () {},

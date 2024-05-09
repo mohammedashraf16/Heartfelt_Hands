@@ -46,7 +46,7 @@ class CustomContainerStatisticsView extends StatelessWidget {
               const SizedBox(height: 70),
               const CustomTextAndCircleAvatar(
                 image: Assets.imageEllipse36,
-                subTitle: AppStrings.numberOfTimeDonation,
+                subTitle: AppStrings.totalNumberOfPoints,
                 number: AppStrings.numberOfDonation,
               ),
             ],
